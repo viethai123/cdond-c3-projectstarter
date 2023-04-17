@@ -348,10 +348,10 @@ jobs:
       - image: cimg/base:stable
     steps:
       - checkout
-      - run:
-          name: Backend smoke test.
-          command: |
-            apk add --update --no-cache curl aws-cli nodejs npm
+      # - run:
+      #     name: Backend smoke test.
+      #     command: |
+      #       apk add --update --no-cache curl aws-cli nodejs npm
       # - attach_workspace:
       #     at: ~/
       - run:
