@@ -342,7 +342,7 @@ jobs:
             export TYPEORM_MIGRATIONS=./migrations/*.ts
 
             cd .circleci/ansible
-            aws ec2  describe-instances \ 
+            aws ec2 describe-instances \ 
               --query 'Reservations[*].Instances[*].PublicIpAddress' \
               --filters "Name=tag:project,Values=be-${CIRCLE_WORKFLOW_ID:0:7}" \
               --output text >> inventory.txt
