@@ -480,7 +480,7 @@ workflows:
       - add-prometheus-node-exporter:
           requires: [deploy-infrastructure]
       - configure-infrastructure:
-          requires: [deploy-infrastructure]
+          requires: [add-prometheus-node-exporter]
       - run-migrations:
           requires: [configure-infrastructure]
       - deploy-frontend:
@@ -492,4 +492,4 @@ workflows:
       - cloudfront-update:
           requires: [smoke-test]
       - cleanup:
-          requires: [cloudfront-update]
+          requires: [cloudfront-update, add-prometheus-node-exporter]
